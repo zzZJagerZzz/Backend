@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="background: red; padding: 1rem">
+      {% for person in persons %}
+      <h2>Имя хозяина: {{ person.first_name }}</h2>
+      <h2>Фамилия хозяина: {{ person.last_name }}</h2>
+      {% for pet in person.pets.all %}
+      <b>id питомца: {{ pet.id }}</b>
+      <p>имя питомца: {{ pet.name }}</p>
+      {% endfor %} {% endfor %}
+    </div>
+
+    <div style="background: aqua; padding: 1rem">
+      {% for pet in pets %}
+      <h2>имя: {{ pet.name }}</h2>
+      <h3>id хозяина: {{ pet.owner.id }}</h3>
+      <h4>имя хозяина: {{ pet.owner.first_name }} {{ pet.owner.last_name }}</h4>
+      {% endfor %}
+    </div>
+  </body>
+</html>
